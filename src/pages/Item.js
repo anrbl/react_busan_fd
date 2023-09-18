@@ -48,7 +48,6 @@ const Item = ({ food }) => {
                                 </div>
                             </div>
                             <div className="map_case">
-
                                 <div id="map" style={{ height: '400px' }}></div>
                             </div>
                         </div>

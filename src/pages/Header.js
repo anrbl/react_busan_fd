@@ -6,13 +6,13 @@ const Header = ({ gu }) => {
             <h1>
                 <Link to='/'>부산맛집 소개</Link>
             </h1>
-            <nav>
+            <nav className="Gnb">
                 <ul>
                     {
                         gu.map(it => {
                             return (
                                 <li key={it}>
-                                    <Link to={`/${it}`}>{it}</Link>
+                                    <Link to={`/${it}`} className="Nav_list">{it}</Link>
                                 </li>
                             )
                         })

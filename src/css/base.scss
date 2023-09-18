@@ -10,6 +10,10 @@
     gap: 20px;
 }
 
+.sec {
+    padding: 32px 0;
+}
+
 
 h3 {
     font-size: 32px;
@@ -45,39 +49,5 @@ td {
     &.tit {
         text-align: center;
         font-weight: 500;
-    }
-}
-
-
-
-
-
-
-
-.Header {
-    position: sticky;
-    top: 0;
-    height: 150px;
-
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background: #fff;
-    border: 1px solid #ddd;
-
-    h1 {
-        font-size: 32px;
-        font-weight: 700;
-        margin: 0 0 24px 0;
-    }
-
-    nav {
-        ul {
-            display: flex;
-            gap: 30px;
-        }
     }
 }

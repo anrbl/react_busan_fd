@@ -13,7 +13,7 @@ const GuList = ({ food }) => {
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
             mapOption = {
                 center: new kakao.maps.LatLng(guList[0].LAT, guList[0].LNG), // 지도의 중심좌표
-                level: 5 // 지도의 확대 레벨
+                level: 7 // 지도의 확대 레벨
             };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -53,43 +53,26 @@ const GuList = ({ food }) => {
     }, [food, gu])
 
     return (
-        <>
+        <section className=" GuList">
             <h2>{gu} 구별 맛집</h2>
-            <div id="map" style={{ height: '400px' }}></div>
+            <div className="map_case">
+                <div id="map" style={{ height: '400px' }}></div>
+            </div>
             <div className="inner">
+                <div className="desc">
+                    <p>이미지를 클릭해 자세한 정보를 확인해보세요.</p>
+                </div>
                 <ul className="list">
                     {
                         guList.map(it => {
                             return (
                                 <li key={it.UC_SEQ}>
-                                    <Link to={`/item/${it.MAIN_TITLE}`}>
+                                    <Link to={`/item/${it.MAIN_TITLE}`} className="case">
                                         <strong>{it.MAIN_TITLE}</strong>
                                         <div className="img_box">
                                             <img src={it.MAIN_IMG_NORMAL} alt={it.MAIN_TITLE} />
                                         </div>
-
                                     </Link>
-                                    <table className="table">
-                                        <colgroup>
-                                            <col style={{ width: '100px' }} />
-                                            <col />
-                                        </colgroup>
-                                        <caption className="blind">음식점 설명</caption>
-                                        <tbody>
-                                            <tr>
-                                                <td>주 소</td>
-                                                <td>{it.ADDR1}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>연락처</td>
-                                                <td><a href={`tel:${it.CNTCT_TEL}`}>{it.CNTCT_TEL}</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>설 명</td>
-                                                <td>{it.ITEMCNTNTS}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </li>
                             )
                         })
@@ -97,7 +80,7 @@ const GuList = ({ food }) => {
                 </ul>
             </div>
 
-        </>
+        </section>
     )
 }
 

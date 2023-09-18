@@ -39,9 +39,19 @@ const Item = ({ food }) => {
         <>
             {
                 Store && (
-                    <>
-                        <h3>{Store.MAIN_TITLE}</h3>
-                        <div id="map" style={{ height: '400px' }}></div>
+                    <section className="Item">
+                        <div className="case">
+                            <div className="desc">
+                                <h3>{Store.MAIN_TITLE}</h3>
+                                <div className="img_box">
+                                    <img src={Store.MAIN_IMG_NORMAL} alt={Store.MAIN_TITLE} />
+                                </div>
+                            </div>
+                            <div className="map_case">
+
+                                <div id="map" style={{ height: '400px' }}></div>
+                            </div>
+                        </div>
                         <table className="table inner">
                             <colgroup>
                                 <col style={{ width: '100px' }} />
@@ -67,10 +77,7 @@ const Item = ({ food }) => {
                                 </tr>
                             </tbody>
                         </table>
-                    </>
-                    // <ul className="itm">
-                    //     <li>{Store?.GUGUN_NM}에 위치한 {Store?.MAIN_TITLE}</li>
-                    // </ul>
+                    </section>
                 )
             }
         </>

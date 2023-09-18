@@ -34,14 +34,7 @@ const App = () => {
             <Header gu={gu} />
             {
                 console.log(food)
-
             }
-            {
-                console.log(food)
-            }
-            {/* {
-                food.map(it => <li>{it.MAIN_TITLE}</li>)
-            } */}
 
             <Routes>
                 <Route path="/" element={<AllList food={food} />}></Route>

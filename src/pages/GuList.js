@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
 
 const GuList = ({ food }) => {
     const { gu } = useParams();
-    const guList = food.filter(it => it.GUGUN_NM == gu);
-    console.log(guList)
+    const guList = food.filter(it => it.GUGUN_NM === gu);
+    console.log(guList);
 
 
     const { kakao } = window;
@@ -14,7 +13,7 @@ const GuList = ({ food }) => {
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
             mapOption = {
                 center: new kakao.maps.LatLng(guList[0].LAT, guList[0].LNG), // 지도의 중심좌표
-                level: 4 // 지도의 확대 레벨
+                level: 5 // 지도의 확대 레벨
             };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -63,31 +62,31 @@ const GuList = ({ food }) => {
                         guList.map(it => {
                             return (
                                 <li key={it.UC_SEQ}>
-
                                     <Link to={`/item/${it.MAIN_TITLE}`}>
                                         <strong>{it.MAIN_TITLE}</strong>
                                         <div className="img_box">
                                             <img src={it.MAIN_IMG_NORMAL} alt={it.MAIN_TITLE} />
                                         </div>
+
                                     </Link>
-                                    <table className="table inner">
+                                    <table className="table">
                                         <colgroup>
                                             <col style={{ width: '100px' }} />
                                             <col />
                                         </colgroup>
-                                        <caption className="blind">음식점설명</caption>
+                                        <caption className="blind">음식점 설명</caption>
                                         <tbody>
                                             <tr>
-                                                <td className="tit">위치</td>
+                                                <td>주 소</td>
                                                 <td>{it.ADDR1}</td>
                                             </tr>
                                             <tr>
-                                                <td className="tit">영업시간</td>
-                                                <td>{it.USAGE_DAY_WEEK_AND_TIME}</td>
+                                                <td>연락처</td>
+                                                <td><a href={`tel:${it.CNTCT_TEL}`}>{it.CNTCT_TEL}</a></td>
                                             </tr>
                                             <tr>
-                                                <td className="tit">연락처</td>
-                                                <td><a href={`tel:${it.CNTCT_TEL}`}>{it.CNTCT_TEL}</a></td>
+                                                <td>설 명</td>
+                                                <td>{it.ITEMCNTNTS}</td>
                                             </tr>
                                         </tbody>
                                     </table>

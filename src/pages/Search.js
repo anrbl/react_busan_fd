@@ -19,7 +19,7 @@ const Search = ({ food }) => {
 
     return (
         <form onSubmit={serchHandle}>
-            <input type="text" value={Search} onChange={inputHandle} placeholder={input} />
+            <input type="text" onChange={inputHandle} placeholder={input} />
             <button>
                 검색하기
             </button>

@@ -20,7 +20,7 @@
             font-size: 40px;
             line-height: 48px;
             width: 300px;
-            text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
+            text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
         }
 
         .img_box {
@@ -39,7 +39,7 @@
                 content: "";
                 position: absolute;
                 inset: 0 0 0 0;
-                background: rgba($color: #000000, $alpha: 0.2);
+                background: rgba($color: #000, $alpha: 0.2);
                 backdrop-filter: blur(3px);
             }
         }

@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
+import Search from "./Search";
 
 const AllList = ({ food }) => {
     const { kakao } = window;
@@ -45,13 +46,15 @@ const AllList = ({ food }) => {
         food && KakaoMapScript();
     }, [food]);
 
+
     return (
         <section className="AllList sec">
             <div className="map_case">
                 <div id="map" style={{ height: '600px' }}></div>
                 <div className="search_map">
-                    <h2>부산 지역구의 맛집찾기</h2>
-                    <button>결과</button>
+                    <h2>부산 지역구의 <b>맛집</b>찾기</h2>
+                    <Search />
+                    <p>관련된 음식 키워드를 입력하거나 지역구를 입력해주세요. 저희가 도와드리겠습니다.</p>
                 </div>
             </div>
             <div className="inner">

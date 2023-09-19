@@ -15,8 +15,8 @@
 
     h1 {
         font-size: 32px;
-        font-weight: 700;
-        margin: 0 0 32px 0;
+        font-weight: 900;
+        margin: 0 0 24px 0;
     }
 
     .Gnb {
@@ -25,8 +25,24 @@
 
             li {
                 .Nav_list {
+                    position: relative;
                     display: block;
-                    padding: 0 24px;
+                    padding: 0 16px;
+                }
+
+                &:hover {
+                    .Nav_list {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -4px;
+                            right: 8px;
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            background: #ff9c1b;
+                        }
+                    }
                 }
             }
         }

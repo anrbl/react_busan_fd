@@ -5,9 +5,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AllList from "./pages/AllList";
 import GuList from "./pages/GuList";
+import SearchResult from "./SearchResult";
+import Item from "./pages/Item";
 
 import './css/style.scss';
-import Item from "./pages/Item";
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<AllList food={food} />}></Route>
                 <Route path="/:gu" element={<GuList food={food} />}></Route>
+                <Route path="/search" element={<SearchResult food={food} />} />
                 <Route path="/item/:item" element={<Item food={food} />}></Route>
             </Routes>
             <Footer />

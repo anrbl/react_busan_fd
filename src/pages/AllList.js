@@ -8,7 +8,7 @@ const AllList = ({ food }) => {
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
             mapOption = {
                 center: new kakao.maps.LatLng(food[20]?.LAT, food[20]?.LNG), // 지도의 중심좌표
-                level: 8 // 지도의 확대 레벨
+                level: 9 // 지도의 확대 레벨
             };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -46,19 +46,22 @@ const AllList = ({ food }) => {
         food && KakaoMapScript();
     }, [food]);
 
-
     return (
         <section className="AllList sec">
             <div className="map_case">
                 <div id="map" style={{ height: '600px' }}></div>
                 <div className="search_map">
-                    <h2>부산 지역구의 <b>맛집</b>찾기</h2>
+                    <h2>부산광역시의 <b>맛집</b>찾기</h2>
                     <Search />
                     <p>관련된 음식 키워드를 입력하거나 지역구를 입력해주세요. 저희가 도와드리겠습니다.</p>
                 </div>
             </div>
             <div className="inner">
                 <ul className="list">
+                    <div className="tit">
+                        <h3><strong>추천 가게</strong> 전체 보기</h3>
+                        <p>부산광역시에서 추천하는 모든 메뉴를 한 눈에! 마음에 드는 가게는 클릭해보세요.</p>
+                    </div>
                     {
                         food.map(it => {
                             return (

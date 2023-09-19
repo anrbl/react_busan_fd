@@ -8,15 +8,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
 
     background: #fff;
     border: 1px solid #ddd;
 
     h1 {
         font-size: 32px;
-        font-weight: 900;
-        margin: 0 0 24px 0;
+        font-weight: 200;
+        margin: 0 0 4px 0;
+
+        b {
+            font-weight: 900;
+            color: #ff9c1b;
+        }
     }
 
     .Gnb {
@@ -24,18 +29,23 @@
             display: flex;
 
             li {
+                transition: 0.3s;
+
                 .Nav_list {
                     position: relative;
                     display: block;
                     padding: 0 16px;
+                    line-height: 72px;
                 }
 
                 &:hover {
+                    color: #ff9c1b;
+
                     .Nav_list {
                         &::before {
                             content: "";
                             position: absolute;
-                            top: -4px;
+                            top: 20px;
                             right: 8px;
                             width: 5px;
                             height: 5px;

@@ -1,4 +1,6 @@
 .SearchResult {
+    padding: 48px 0;
+
     .SearchList {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

@@ -4,7 +4,7 @@ const Header = ({ gu }) => {
     return (
         <header className="Header">
             <h1>
-                <Link to='/'>부산맛집 소개</Link>
+                <Link to='/'>부산의 <b>맛집</b>을 찾아서</Link>
             </h1>
             <nav className="Gnb">
                 <ul>
